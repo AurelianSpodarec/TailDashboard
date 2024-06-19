@@ -20,7 +20,7 @@ function ModeToggle () {
           <button type="button" className="">Toggle Theme</button>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="z-50">
+      <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => { setTheme('light') }}>
           Light
         </DropdownMenuItem>

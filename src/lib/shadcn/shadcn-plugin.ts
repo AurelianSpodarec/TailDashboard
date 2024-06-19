@@ -44,8 +44,9 @@ export const shadcnPlugin = plugin(
 
         // Header
         // -------------------------------------------------------------
-        "--header-height": "",
-        "--header-background": "white"
+        "--header-background": "white",
+        "--header-foreground": "black",
+        "--header-border-bottom": "green",
 
 
         // Sidebar
@@ -61,7 +62,9 @@ export const shadcnPlugin = plugin(
 
         // Header
         // -------------------------------------------------------------
-        "--header-background": "black"
+        "--header-background": "black",
+        "--header-foreground": "white",
+        "--header-border-bottom": "red",
 
 
       }
@@ -137,6 +140,8 @@ export const shadcnPlugin = plugin(
           // ============================================================= 
           header: {
             background: 'var(--header-background)',
+            foreground: 'var(--header-foreground)',
+            "border-bottom": 'var(--header-border-bottom)',
           },
           // main: {
 
