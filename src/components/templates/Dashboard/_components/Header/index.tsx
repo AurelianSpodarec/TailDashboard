@@ -1,7 +1,10 @@
+import ModeToggle from "@/components/ModeToggle"
+
 function SidebarHeader() {
   return (
-    <header className="bg-header-background bg-primary text-primary">
+    <header className="flex bg-header-background">
       Header
+      <ModeToggle />
     </header>
   )
 }

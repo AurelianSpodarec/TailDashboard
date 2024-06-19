@@ -39,13 +39,13 @@ export const shadcnPlugin = plugin(
         '--radius': '0.5rem',
 
         // =============================================================
-        // Mains Components
+        // Main Components
         // ============================================================= 
 
         // Header
         // -------------------------------------------------------------
         "--header-height": "",
-        "--header-background": theme('colors.red.500')
+        "--header-background": "white"
 
 
         // Sidebar
@@ -53,11 +53,18 @@ export const shadcnPlugin = plugin(
 
         // Main
         // ------------------------------------------------------------
+      },
+      '.dark': {
+        // =============================================================
+        // Mains Components
+        // ============================================================= 
+
+        // Header
+        // -------------------------------------------------------------
+        "--header-background": "black"
+
+
       }
-      // '.dark': {
-
-
-      // }
     })
     addBase({
       '*': {
@@ -131,12 +138,12 @@ export const shadcnPlugin = plugin(
           header: {
             background: 'var(--header-background)',
           },
-          main: {
+          // main: {
 
-          },
-          sidebar: {
+          // },
+          // sidebar: {
             
-          },
+          // },
 
 
           // =============================================================

@@ -14,7 +14,7 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
       dashboardContent = (
         <div className="flex">
           <Sidebar settings={settings.sidebar} />
-          <div>
+          <div className="w-full">
             <SidebarHeader />
             <SidebarMain />
           </div>
@@ -25,7 +25,7 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
       dashboardContent = (
         <div className="flex flex-col">
           <SidebarHeader />
-          <div>
+          <div className="w-full">
             <Sidebar settings={settings.sidebar} />
             <SidebarMain />
           </div>

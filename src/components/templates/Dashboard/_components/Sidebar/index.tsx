@@ -1,5 +1,5 @@
 import { IDashboardSettingsSidebar } from "@/config/IDashboardSettings"
-import SidebarNavigation from "../SidebarNavigation"
+import SidebarNavigation from "./SidebarNavigation"
 
 function Sidebar({ settings }: { settings: IDashboardSettingsSidebar }) {
   return (

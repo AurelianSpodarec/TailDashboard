@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContextProvider from '@/context'
 
 import './../styles/styles.scss'
 
@@ -14,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <ContextProvider>
+        <body>
+          {children}
+        </body>
+      </ContextProvider>
     </html>
   );
 }
