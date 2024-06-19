@@ -1,34 +1,8 @@
 'use client'
 
-import SidebarNavigation from "./_components/SidebarNavigation";
-
-function Sidebar({ settings }) {
-  return (
-    <aside className="border-r px-6 w-[270px]">
-      Sidebar
-      <SidebarNavigation settings={settings.menu} />
-    </aside>
-  )
-}
-
-function SidebarHeader() {
-  return (
-    <header>
-      Header
-    </header>
-  )
-}
-
-function SidebarMain() {
-  return (
-    <main>
-      Main
-    </main>
-  )
-}
-
-
-
+import SidebarHeader from "./_components/Header";
+import SidebarMain from "./_components/Main";
+import Sidebar from "./_components/Sidebar";
 
 function Dashboard({ settings }: any) {
 
