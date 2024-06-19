@@ -1,4 +1,14 @@
-import { INavigationItem } from "../data-sidebar"
+
+export interface INavigationItem {
+  id: string
+  name: string
+  slug?: string
+  icon?: JSX.Element
+  new?: boolean
+  onAction?: () => void,
+  children?: INavigationItem[]
+  data?: object | string | [] | number
+}
 
 function SidebarNavigationItem({ item }: { item: INavigationItem }) {
   return (

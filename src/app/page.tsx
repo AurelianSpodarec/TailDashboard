@@ -1,9 +1,10 @@
 'use client'
-import { useEffect, useState } from "react"
 
+import { useEffect, useState } from "react"
+import { dashboardSettings } from "@/config/settings"
+
+import Dashboard from "@/components/templates/Dashboard"
 import EditorJSX from "@/components/EditorJSX"
-import { dashboardSettings } from "./dashboard/data-sidebar"
-import Dashboard from "./dashboard/page"
 
 function View() {
   const [settings, setSettings] = useState(dashboardSettings)

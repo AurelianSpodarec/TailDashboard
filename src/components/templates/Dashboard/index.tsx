@@ -1,10 +1,12 @@
 'use client'
 
-import SidebarHeader from "./_components/Header";
+import { IDashboardSettings } from "@/config/IDashboardSettings";
+
 import SidebarMain from "./_components/Main";
+import SidebarHeader from "./_components/Header";
 import Sidebar from "./_components/Sidebar";
 
-function Dashboard({ settings }: any) {
+function Dashboard({ settings }: { settings: IDashboardSettings }) {
 
   let dashboardContent
   switch (settings.grid.variation) {
@@ -34,7 +36,7 @@ function Dashboard({ settings }: any) {
       dashboardContent = (
         <div>
           {/* Handle other grid variations */}
-          Grid {dashboard.grid} is not supported.
+          Grid {settings.grid.variation} is not supported.
         </div>
       );
   }

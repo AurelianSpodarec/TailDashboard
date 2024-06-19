@@ -1,6 +1,6 @@
 function SidebarHeader() {
   return (
-    <header>
+    <header className="bg-header-background bg-primary text-primary">
       Header
     </header>
   )
