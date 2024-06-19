@@ -10,9 +10,14 @@ export interface INavigationItem {
   data?: object | string | [] | number
 }
 
-function SidebarNavigationItem({ item }: { item: INavigationItem }) {
+function SidebarNavigationItem({ item, isActive }: { item: INavigationItem, isActive?: boolean }) {
   return (
-    <div className="flex">
+    <div className={`flex
+      ${isActive ?
+        "text-sidebar-link-foreground-active bg-sidebar-link-background-active hover:text-sidebar-link-foreground-active-hover hover:bg-sidebar-link-background-active-hover" :
+        "text-sidebar-link-foreground hover:text-sidebar-link-foreground-hover bg-sidebar-link-background hover:bg-sidebar-link-background-hover"
+      }
+    `}>
       <div className="flex">
         {item.icon &&
           item.icon
@@ -32,18 +37,19 @@ function SidebarNavigationItem({ item }: { item: INavigationItem }) {
 function SidebarNavigationItemChildren({ children }: { children: INavigationItem[] }) {
   return (
     <div className="ml-4">
-      {children.map((child) => (
-        <SidebarNavigationItem key={child.id} item={child} />
-      ))}
+      {children.map((child, index) => {
+        return <SidebarNavigationItem key={child.id} item={child} />
+      })}
     </div>
   )
 }
 
-function SidebarNavigation({ settings }:any) {
+function SidebarNavigation({ settings }: any) {
   return (
     <nav>
-      {settings.map((item: any) => {
-        return <SidebarNavigationItem key={item.id} item={item} />
+      {settings.map((item: any, index: number) => {
+        const isActive = index === 0
+        return <SidebarNavigationItem key={item.id} item={item} isActive={isActive} />
       })}
     </nav>
   )
