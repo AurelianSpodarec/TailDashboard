@@ -2,8 +2,7 @@
 
 import { ThemeProvider } from '@/context/theme-provider'
 
-function ContextProvider({ children, session }: { children: React.ReactNode, session?: unknown }) {
-
+function ContextProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"

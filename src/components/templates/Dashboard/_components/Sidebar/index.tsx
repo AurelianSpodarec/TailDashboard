@@ -4,7 +4,7 @@ import SidebarLogo from "./SidebarLogo"
 
 function Sidebar({ settings }: { settings: IDashboardSettingsSidebar }) {
   return (
-    <aside className="border-r px-6 w-[270px]">
+    <aside className="border-r w-[270px]">
       <SidebarLogo />
       <SidebarNavigation settings={settings.menu} />
     </aside>

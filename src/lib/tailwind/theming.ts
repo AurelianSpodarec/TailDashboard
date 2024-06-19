@@ -1,6 +1,6 @@
 import plugin from 'tailwindcss/plugin'
 
-export const shadcnPlugin = plugin(
+export const theming = plugin(
   function ({ addBase, theme }) {
     addBase({
       ':root': {

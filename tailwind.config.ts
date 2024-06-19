@@ -1,8 +1,8 @@
 import { type Config } from 'tailwindcss'
-import { shadcnPreset } from './src/lib/shadcn/shadcn-preset'
+import { preset } from './src/lib/tailwind/preset'
 
 const config = {
-  presets: [shadcnPreset],
+  presets: [preset],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
