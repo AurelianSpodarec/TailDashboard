@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react"
 
 import EditorJSX from "@/components/EditorJSX"
-import { menu } from "./dashboard/data-sidebar"
+import { dashboardSettings } from "./dashboard/data-sidebar"
 import Dashboard from "./dashboard/page"
 
 function View() {
-  const [settings, setSettings] = useState(menu)
+  const [settings, setSettings] = useState(dashboardSettings)
   const [editorValue, setEditorValue] = useState("")
 
   function onChange(e:string) {

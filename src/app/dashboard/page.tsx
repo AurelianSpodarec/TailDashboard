@@ -1,63 +1,71 @@
 'use client'
 
-import { INavigationItem, menu } from "./data-sidebar";
+import SidebarNavigation from "./_components/SidebarNavigation";
 
-function SidebarNavigationItem({ item }: { item: INavigationItem }) {
+function Sidebar({ settings }) {
   return (
-    <div className="flex">
-      <div className="flex">
-        {item.icon &&
-          item.icon
-        }
-        <span className="ml-3 flex-1 whitespace-nowrap">{item.name}</span>
-      </div>
-
-      {item.new &&
-        <span className="ml-auto">NEW!</span>
-      }
-
-      {item?.children && <SidebarNavigationItemChildren children={item.children} />}
-    </div>
+    <aside className="border-r px-6 w-[270px]">
+      Sidebar
+      <SidebarNavigation settings={settings.menu} />
+    </aside>
   )
 }
 
-function SidebarNavigationItemChildren({ children }: { children: INavigationItem[] }) {
+function SidebarHeader() {
   return (
-    <div className="ml-4">
-      {children.map((child) => (
-        <SidebarNavigationItem key={child.id} item={child} />
-      ))}
-    </div>
+    <header>
+      Header
+    </header>
   )
 }
 
-function SidebarNavigation({ settings }:any) {
+function SidebarMain() {
   return (
-    <nav>
-      {settings.map((item: any) => {
-        return <SidebarNavigationItem key={item.id} item={item} />
-      })}
-    </nav>
+    <main>
+      Main
+    </main>
   )
 }
 
-function Dashboard({ settings }:any) {
-  return (
-    <div className="flex">
-      <aside className="border-r px-6 w-[270px]">
-        Sidebar
-        <SidebarNavigation settings={settings} />
-      </aside>
-      <div>
-        <header>
-          Header
-        </header>
-        <main>
-          Main
-        </main>
-      </div>
-    </div>
-  );
+
+
+
+function Dashboard({ settings }: any) {
+
+  let dashboardContent
+  switch (settings.grid.variation) {
+    case 1:
+      dashboardContent = (
+        <div className="flex">
+          <Sidebar settings={settings.sidebar} />
+          <div>
+            <SidebarHeader />
+            <SidebarMain />
+          </div>
+        </div>
+      );
+      break;
+    case 2:
+      dashboardContent = (
+        <div className="flex flex-col">
+          <SidebarHeader />
+          <div>
+            <Sidebar settings={settings.sidebar} />
+            <SidebarMain />
+          </div>
+        </div>
+      );
+      break;
+    default:
+      dashboardContent = (
+        <div>
+          {/* Handle other grid variations */}
+          Grid {dashboard.grid} is not supported.
+        </div>
+      );
+  }
+
+  return dashboardContent
 }
 
 export default Dashboard
