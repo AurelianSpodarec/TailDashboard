@@ -1,11 +1,12 @@
-import { INavigationItem } from "@/components/templates/Dashboard/_components/SidebarNavigation"
+import { INavigationItem } from "@/components/templates/Dashboard/_components/Sidebar/SidebarNavigation"
 
 export interface IDashboardSettingsSidebar {
-  mode?: 1 | 2
+  variation?: 1 | 2
   menu: INavigationItem[]
 }
 
 export interface IDashboardSettings {
+  mode: "light" | "dark"
   grid: {
     variation: 1 | 2
   },

@@ -12,7 +12,7 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
   switch (settings.grid.variation) {
     case 1:
       dashboardContent = (
-        <div className="flex">
+        <div className="flex w-full h-full">
           <Sidebar settings={settings.sidebar} />
           <div className="w-full">
             <SidebarHeader />
@@ -23,7 +23,7 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
       break;
     case 2:
       dashboardContent = (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full h-full">
           <SidebarHeader />
           <div className="w-full">
             <Sidebar settings={settings.sidebar} />

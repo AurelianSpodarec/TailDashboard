@@ -4,9 +4,11 @@ import SidebarLogo from "./SidebarLogo"
 
 function Sidebar({ settings }: { settings: IDashboardSettingsSidebar }) {
   return (
-    <aside className="bg-sidebar-background text-sidebar-foreground border-r w-[270px]">
-      <SidebarLogo />
-      <SidebarNavigation settings={settings.menu} />
+    <aside className="bg-sidebar-background text-sidebar-foreground border-r w-[270px] h-screen">
+      <div className="flex h-full flex-col flex-auto overflow-hidden">
+        <SidebarLogo />
+        <SidebarNavigation settings={settings.menu} />
+      </div>
     </aside>
   )
 }

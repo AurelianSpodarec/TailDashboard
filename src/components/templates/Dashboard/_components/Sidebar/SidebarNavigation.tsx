@@ -46,7 +46,7 @@ function SidebarNavigationItemChildren({ children }: { children: INavigationItem
 
 function SidebarNavigation({ settings }: any) {
   return (
-    <nav>
+    <nav className="flex-1 overflow-auto">
       {settings.map((item: any, index: number) => {
         const isActive = index === 0
         return <SidebarNavigationItem key={item.id} item={item} isActive={isActive} />

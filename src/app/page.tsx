@@ -25,13 +25,13 @@ function View() {
   }, [settings])
 
   return (
-    <div className="flex">
-      <div className="relative h-screen w-[400px]">
+    <div className="flex h-full w-full">
+      {/* <div className="relative h-screen w-[400px]">
         <EditorJSX editorValue={editorValue} onChange={onChange} />
       </div>
-      <div className="h-full w-full">
+      <div className="h-full w-full"> */}
         <Dashboard settings={settings} />
-      </div>
+      {/* </div> */}
     </div>
   );
 }
