@@ -3,7 +3,7 @@ import { IDashboardSettings } from "./IDashboardSettings"
 const dashboardSettings:IDashboardSettings = {
   mode: "light",
   grid: {
-    variation: 1,
+    variation: 2,
   },
   header: {
 

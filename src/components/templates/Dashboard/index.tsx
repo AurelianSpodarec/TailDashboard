@@ -6,7 +6,7 @@ import SidebarMain from "./_components/Main";
 import SidebarHeader from "./_components/Header";
 import Sidebar from "./_components/Sidebar";
 
-function Dashboard({ settings }: { settings: IDashboardSettings }) {
+function Dashboard({ settings, children }: { settings: IDashboardSettings }) {
 
   let dashboardContent
   switch (settings.grid.variation) {
@@ -16,7 +16,9 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
           <Sidebar settings={settings.sidebar} />
           <div className="w-full">
             <SidebarHeader />
-            <SidebarMain />
+            <SidebarMain>
+              {children}
+            </SidebarMain>
           </div>
         </div>
       );
@@ -27,7 +29,9 @@ function Dashboard({ settings }: { settings: IDashboardSettings }) {
           <SidebarHeader />
           <div className="w-full">
             <Sidebar settings={settings.sidebar} />
-            <SidebarMain />
+            <SidebarMain>
+              {children}
+            </SidebarMain>
           </div>
         </div>
       );

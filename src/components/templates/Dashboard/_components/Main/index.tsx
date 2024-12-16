@@ -1,7 +1,7 @@
-function SidebarMain() {
+function SidebarMain({ children }) {
   return (
     <main>
-      Main
+      {children}
     </main>
   )
 }

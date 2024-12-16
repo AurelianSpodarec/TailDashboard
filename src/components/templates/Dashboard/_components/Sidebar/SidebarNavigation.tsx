@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 export interface INavigationItem {
   id: string
@@ -11,12 +12,19 @@ export interface INavigationItem {
 }
 
 function SidebarNavigationItem({ item, isActive }: { item: INavigationItem, isActive?: boolean }) {
+  const hasChildren = item.children
+
+  const Comp = hasChildren ? 'div' : Link;
+  const linkProps = !hasChildren && item.slug && { href: item.slug };
+
   return (
-    <div className={`flex
+    <Comp
+      {...(linkProps as any)}
+      className={`flex
       ${isActive ?
-        "text-sidebar-link-foreground-active bg-sidebar-link-background-active hover:text-sidebar-link-foreground-active-hover hover:bg-sidebar-link-background-active-hover" :
-        "text-sidebar-link-foreground hover:text-sidebar-link-foreground-hover bg-sidebar-link-background hover:bg-sidebar-link-background-hover"
-      }
+          "text-sidebar-link-foreground-active bg-sidebar-link-background-active hover:text-sidebar-link-foreground-active-hover hover:bg-sidebar-link-background-active-hover" :
+          "text-sidebar-link-foreground hover:text-sidebar-link-foreground-hover bg-sidebar-link-background hover:bg-sidebar-link-background-hover"
+        }
     `}>
       <div className="flex">
         {item.icon &&
@@ -30,7 +38,7 @@ function SidebarNavigationItem({ item, isActive }: { item: INavigationItem, isAc
       }
 
       {item?.children && <SidebarNavigationItemChildren children={item.children} />}
-    </div>
+    </Comp>
   )
 }
 
